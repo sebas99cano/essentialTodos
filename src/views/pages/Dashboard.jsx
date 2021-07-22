@@ -1,15 +1,13 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
-
 import {getTodos} from "../../application/selectors/todos";
 import {getLoading} from "../../application/selectors/ui";
-
-import {pageLoaded} from "../../application/actions/ui"
-
-import {bindActionCreators} from "redux";
+import {pageLoaded} from "../../application/actions/ui";
 import {putTodo} from "../../application/actions/todos";
+import {bindActionCreators} from "redux";
 
-const Index = ({pageLoaded, putTodo, todos, loading}) => {
+
+const Dashboard = ({pageLoaded, putTodo, todos, loading}) => {
 
     useEffect(() => {
         pageLoaded()
@@ -78,4 +76,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
