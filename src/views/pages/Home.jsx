@@ -12,7 +12,7 @@ const Home = () => {
                         className="bi bi-controller" /></h1>
                     <h4 className={"color-black mt-5"}>What are you waiting for to be part of this wonderful community, don't wait any longer and
                         register to start interacting with other users</h4>
-                    <Link className=" mt-5 btn btn-dark" to={"/signup"}>Register now</Link>
+                    <Link className=" mt-5 btn btn-dark" to={"/login"}>Register now</Link>
                     <br/><br/>
                 </div>
             </div>
