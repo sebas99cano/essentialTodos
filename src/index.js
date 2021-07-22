@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from './application/store';
 import services from './infrastructure/services';
-import App from './views';
+import App from './views/pages';
 
 ReactDOM.render(
     <Provider store={configureStore(services)}>
