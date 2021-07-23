@@ -39,16 +39,14 @@ const Todos = ({pageLoaded, putTodo, todos, loading}) => {
                                     </thead>
                                     <tbody>
                                     {todos.map(todo => (
-                                        <tr key={todo.id}
-                                        >
+                                        <tr key={todo.id}>
                                             <td style={{
                                                 textDecoration: todo.completed ? 'line-through' : 'none',
                                                 cursor: 'pointer',
-                                            }}
+                                                }}
                                                 onClick={() => handleClicked({
                                                     ...todo,
-                                                    completed: !todo.completed
-                                                })}>
+                                                    completed: !todo.completed})}>
                                                 {todo.title}
                                             </td>
                                             <td className={todo.completed ? "table-success" : "table-danger"}>

@@ -9,7 +9,9 @@ export default class Todo {
     }
 
     setTitle(title) {
-        this.title = title;
+        if(title !== null && title.length > 5 && title.length < 50){
+            this.title = title;
+        }
     }
 
     getTitle() {
@@ -17,7 +19,9 @@ export default class Todo {
     }
 
     setCompleted(completed) {
-        this.completed = completed;
+        if(completed !== undefined && completed !== null){
+            this.completed = completed;
+        }
     }
 
     getCompleted() {

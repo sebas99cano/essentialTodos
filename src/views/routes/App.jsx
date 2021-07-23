@@ -22,7 +22,7 @@ const App = () => {
             <Switch>
                 <Route exact path={"/"} component={Home}/>
                 <PublicRoute exact path={"/login"} component={LogIn} authenticated={false}/>
-                <PrivateRoute exact path={"/todos"} component={Todos} authenticated={false}/>
+                <PrivateRoute exact path={"/todos"} component={Todos} authenticated={true}/>
                 <Route path={"*"} component={NotFoundPage}/>
             </Switch>
             <Footer/>

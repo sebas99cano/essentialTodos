@@ -8,3 +8,4 @@ export function signInWithGoogle() {
 export function logout() {
     return auth().signOut();
 }
+

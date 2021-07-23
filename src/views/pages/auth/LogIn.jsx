@@ -1,17 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {signInWithGoogle} from "../../../infrastructure/services/firebase/auth";
-import {auth} from "../../../infrastructure/services/firebase/firebase";
+import {bindActionCreators} from "redux";
+import {loginUser} from "../../../application/actions/user";
+import {connect} from "react-redux";
+import {getUser} from "../../../application/selectors/user";
 
-const LogIn = () => {
+
+const LogIn = ({loginUser,user}) => {
 
     const loginWithGoogleUser = (event) => {
         event.preventDefault();
         signInWithGoogle().then(r => {
-            console.log(auth().currentUser)
+            loginUser();
         }).catch(error => {
             console.log(error)
         })
     }
+
+    useEffect(()=>{
+        console.log(user)
+    },[user])
 
     return (
         <div className="container text-center">
@@ -41,4 +49,14 @@ const LogIn = () => {
     )
 }
 
-export default LogIn;
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({loginUser}, dispatch);
+}
+
+const mapStateToProps = (state) => {
+    return {
+        user: getUser(state),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
