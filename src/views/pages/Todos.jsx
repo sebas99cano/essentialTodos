@@ -7,7 +7,7 @@ import {putTodo} from "../../application/actions/todos";
 import {bindActionCreators} from "redux";
 
 
-const Dashboard = ({pageLoaded, putTodo, todos, loading}) => {
+const Todos = ({pageLoaded, putTodo, todos, loading}) => {
 
     useEffect(() => {
         pageLoaded()
@@ -76,4 +76,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Todos);
